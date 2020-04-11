@@ -33,6 +33,6 @@ abstract class KtorBenchmark constructor(val factory: ApplicationEngineFactory<i
     }
 
     override fun stopServer() {
-        server.stop(500, 5000, TimeUnit.MILLISECONDS)
+        server.stop(500, 5000)
     }
 }

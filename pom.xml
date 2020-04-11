@@ -55,17 +55,17 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.11.v20180605</version>
+            <version>9.4.28.v20200408</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>9.4.11.v20180605</version>
+            <version>9.4.28.v20200408</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-servlet</artifactId>
-            <version>9.4.11.v20180605</version>
+            <version>9.4.28.v20200408</version>
         </dependency>
 
         <!-- Netty -->
@@ -120,52 +120,11 @@
             <version>${ktor.version}</version>
         </dependency>
 
-        <!-- SparkJava -->
-        <dependency>
-            <groupId>com.sparkjava</groupId>
-            <artifactId>spark-core</artifactId>
-            <version>2.7.2</version>
-        </dependency>
-
-        <!-- Undertow -->
-        <dependency>
-            <groupId>io.undertow</groupId>
-            <artifactId>undertow-core</artifactId>
-            <version>1.4.17.Final</version>
-        </dependency>
-
         <!-- Vert.x -->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-web</artifactId>
             <version>3.5.4</version>
-        </dependency>
-
-        <!-- rapidoid -->
-        <dependency>
-            <groupId>org.rapidoid</groupId>
-            <artifactId>rapidoid-quick</artifactId>
-            <version>5.3.4</version>
-        </dependency>
-
-        <!-- nanohttpd-->
-        <dependency>
-            <groupId>org.nanohttpd</groupId>
-            <artifactId>nanohttpd</artifactId>
-            <version>2.3.1</version>
-        </dependency>
-
-        <!-- fluent http -->
-        <dependency>
-            <groupId>net.code-story</groupId>
-            <artifactId>http</artifactId>
-            <version>2.105</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>slf4j-simple</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- Akka Http -->
@@ -201,28 +160,6 @@
             <artifactId>http4k-server-jetty</artifactId>
             <version>${http4k.version}</version>
         </dependency>
-
-        <!-- Grizzly -->
-        <dependency>
-            <groupId>org.glassfish.grizzly</groupId>
-            <artifactId>grizzly-http-server</artifactId>
-            <version>2.3.30</version>
-        </dependency>
-
-        <!-- Ninja -->
-        <dependency>
-            <groupId>org.ninjaframework</groupId>
-            <artifactId>ninja-standalone</artifactId>
-            <version>6.0.0-rc1</version>
-        </dependency>
-
-        <!-- Colossus -->
-        <dependency>
-            <groupId>com.tumblr</groupId>
-            <artifactId>colossus_2.11</artifactId>
-            <version>0.8.2</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

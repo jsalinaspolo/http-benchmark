@@ -32,7 +32,7 @@ open class KtorJettyBenchmark : HttpBenchmarkBase() {
     }
 
     override fun stopServer() {
-        server.stop(500, 5000, TimeUnit.MILLISECONDS)
+        server.stop(500, 5000)
     }
 }
 
