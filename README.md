@@ -3,19 +3,12 @@ _Order is alphabetical_
 
 #### Measured
 * AkkaHttp
-* Colossus
-* FluentHttp 
-* Grizzly
 * Hexagon 
 * Http4k (Jetty & Netty) 
 * Jetty
 * Ktor (Jetty & Netty)
-* NanoHttp
 * Netty
-* NinjaFramework
-* Rapidoid
-* SparkJava
-* Undertow
+* Ratpack
 * Vert.x
 
 # Building

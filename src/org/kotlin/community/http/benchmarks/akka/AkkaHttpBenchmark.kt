@@ -1,11 +1,15 @@
 package org.kotlin.community.http.benchmarks.akka
 
-import akka.actor.*
-import akka.http.javadsl.*
-import akka.http.javadsl.model.*
-import akka.http.javadsl.server.*
-import akka.stream.*
-import org.kotlin.community.http.benchmarks.*
+import akka.actor.ActorSystem
+import akka.http.javadsl.ConnectHttp
+import akka.http.javadsl.Http
+import akka.http.javadsl.model.ContentTypes
+import akka.http.javadsl.model.HttpEntities
+import akka.http.javadsl.server.Directives
+import akka.http.javadsl.server.Route
+import akka.stream.ActorMaterializer
+import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
+import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
     benchmark(args) {

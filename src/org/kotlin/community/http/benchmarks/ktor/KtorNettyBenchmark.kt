@@ -10,7 +10,6 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
 import org.kotlin.community.http.benchmarks.benchmark
-import java.util.concurrent.TimeUnit
 
 fun main(args: Array<String>) {
     benchmark(args) {
