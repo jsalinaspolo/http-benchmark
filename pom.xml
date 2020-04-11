@@ -12,19 +12,17 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <kotlin.version>1.1.0</kotlin.version>
+        <kotlin.version>1.3.71</kotlin.version>
         <dokka.version>0.9.11</dokka.version>
-        <jmh.version>1.17.5</jmh.version>
+        <jmh.version>1.21</jmh.version>
+        <http4k.version>3.183.0</http4k.version>
+        <ktor.version>1.3.1</ktor.version>
+        <ratpack.version>1.7.6</ratpack.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-runtime</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
@@ -34,11 +32,6 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
             <version>${kotlin.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlinx</groupId>
-            <artifactId>kotlinx-support-jdk8</artifactId>
-            <version>0.3</version>
         </dependency>
 
         <!-- Logging -->
@@ -79,39 +72,52 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.14.Final</version>
+            <version>4.1.41.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
-            <version>4.1.14.Final</version>
+            <version>4.1.41.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-socks</artifactId>
-            <version>4.1.14.Final</version>
+            <version>4.1.41.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-resolver-dns</artifactId>
-            <version>4.1.14.Final</version>
+            <version>4.1.41.Final</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler-proxy</artifactId>
-            <version>4.1.14.Final</version>
+            <version>4.1.41.Final</version>
         </dependency>
+
+        <!-- Ratpack -->
+        <dependency>
+            <groupId>io.ratpack</groupId>
+            <artifactId>ratpack-core</artifactId>
+            <version>${ratpack.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+
 
         <!-- Ktor -->
         <dependency>
-            <groupId>org.jetbrains.ktor</groupId>
-            <artifactId>ktor-netty</artifactId>
-            <version>0.3.2</version>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-server-netty</artifactId>
+            <version>${ktor.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains.ktor</groupId>
-            <artifactId>ktor-jetty</artifactId>
-            <version>0.3.2</version>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-server-jetty</artifactId>
+            <version>${ktor.version}</version>
         </dependency>
 
         <!-- SparkJava -->
@@ -179,28 +185,21 @@
             <version>2.4.17</version>
         </dependency>
 
-        <!-- Hexagon -->
-        <dependency>
-            <groupId>co.there4</groupId>
-            <artifactId>hexagon</artifactId>
-            <version>0.11.1</version>
-        </dependency>
-
-        <!-- Http4k -->
+            <!-- Http4k -->
         <dependency>
             <groupId>org.http4k</groupId>
             <artifactId>http4k-core</artifactId>
-            <version>1.4.0</version>
+            <version>${http4k.version}</version>
         </dependency>
         <dependency>
             <groupId>org.http4k</groupId>
             <artifactId>http4k-server-netty</artifactId>
-            <version>1.4.0</version>
+            <version>${http4k.version}</version>
         </dependency>
         <dependency>
             <groupId>org.http4k</groupId>
             <artifactId>http4k-server-jetty</artifactId>
-            <version>1.4.0</version>
+            <version>${http4k.version}</version>
         </dependency>
 
         <!-- Grizzly -->
@@ -415,10 +414,25 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <addClasspath>true</addClasspath>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <mainClass>org.kotlin.community.http.benchmarks.BenchmarksKt</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.kotlin.community.http.benchmarks.BenchmarksKt</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
             </plugin>
         </plugins>
@@ -442,22 +456,6 @@
         <pluginRepository>
             <id>devexperts-maven</id>
             <url>https://dl.bintray.com/devexperts/Maven</url>
-        </pluginRepository>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-kotlin-dev</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/kotlin/kotlin-dev</url>
-        </pluginRepository>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-kotlin-eap-1.1</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/kotlin/kotlin-eap-1.1</url>
         </pluginRepository>
     </pluginRepositories>
     <repositories>
