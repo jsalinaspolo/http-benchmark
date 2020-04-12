@@ -6,6 +6,8 @@ target
 out
 *.iml
 
+.gradle
+
 *.versionsBackup
 *.releaseBackup
 release.properties
