@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
     }
 
     benchmark(args) {
-//        profile("gc")
+        profile("gc")
         iterations = 5
         iterationTime = 10_000
         setup()

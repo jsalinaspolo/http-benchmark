@@ -2,6 +2,7 @@ package org.kotlin.community.http.benchmarks.ratpack
 
 import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
 import org.kotlin.community.http.benchmarks.benchmark
+import ratpack.http.internal.HttpHeaderConstants.PLAIN_TEXT_UTF8
 import ratpack.server.RatpackServer
 
 fun main(args: Array<String>) {
@@ -16,7 +17,7 @@ open class RatpackBenchmark : HttpBenchmarkBase() {
         server = RatpackServer.start { serverSpec ->
             serverSpec
                     .serverConfig { config -> config.port(port) }
-                    .handlers { chain -> chain.get("") { it.render("Hello") } }
+                    .handlers { chain -> chain.get { it.response.send(PLAIN_TEXT_UTF8, "Hello") } }
         }
     }
 
