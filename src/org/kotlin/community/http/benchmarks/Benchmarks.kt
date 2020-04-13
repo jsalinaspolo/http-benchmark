@@ -26,10 +26,10 @@ fun main(args: Array<String>) {
 }
 
 private fun BenchmarkSettings.setup() {
-    run<AkkaHttpBenchmark>()
+//    run<AkkaHttpBenchmark>()
     run<JettyBenchmark>()
     run<Http4kJettyBenchmark>()
-    run<Http4kNettyBenchmark>()
+//    run<Http4kNettyBenchmark>()
     run<VertxBenchmark>()
     run<NettyBenchmark>()
     run<RatpackBenchmark>()
