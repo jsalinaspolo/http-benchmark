@@ -42,6 +42,7 @@ pipeline {
                         manual: false,
                         environment: "staging",
                         namespace: "product",
+                        cluster: "eks",
                         applications: ["http-benchmark"]
                 )
             }
