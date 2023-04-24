@@ -42,7 +42,7 @@ dependencies {
   implementation("io.micronaut:micronaut-http-server-netty:1.3.4")
   implementation("org.openjdk.jmh:jmh-core:1.23")
   implementation("org.openjdk.jmh:jmh-generator-annprocess:1.23")
-  implementation("org.apache.httpcomponents:httpclient:4.5.3")
+  implementation("org.apache.httpcomponents:httpclient:4.5.14")
   implementation("com.squareup.okhttp3:okhttp:3.6.0")
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.3.71")
   testImplementation("junit:junit:4.12")
