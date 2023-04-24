@@ -45,9 +45,16 @@ dependencies {
 
 group = "org.kotlin.community"
 version = "0.1-SNAPSHOT"
-description = "http-benchmarks"
+description = "http-benchmark"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Implementation-Title"] = project.name
+        attributes["Implementation-Version"] = project.version
+    }
 }

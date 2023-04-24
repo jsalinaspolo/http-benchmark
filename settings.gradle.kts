@@ -1,1 +1,1 @@
-rootProject.name = "http-benchmarks"
+rootProject.name = "http-benchmark"
