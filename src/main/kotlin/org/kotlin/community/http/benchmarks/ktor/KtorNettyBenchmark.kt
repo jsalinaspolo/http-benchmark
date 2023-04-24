@@ -12,25 +12,25 @@ import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
 import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
-    benchmark(args) {
-        run<KtorNettyBenchmark>()
-    }
+  benchmark(args) {
+    run<KtorNettyBenchmark>()
+  }
 }
 
 open class KtorNettyBenchmark : HttpBenchmarkBase() {
-    private lateinit var server: ApplicationEngine
-    override fun startServer(port: Int) {
-        server = embeddedServer(Netty, port) {
-            install(Routing) {
-                get("/") {
-                    call.respondText("Hello")
-                }
-            }
+  private lateinit var server: ApplicationEngine
+  override fun startServer(port: Int) {
+    server = embeddedServer(Netty, port) {
+      install(Routing) {
+        get("/") {
+          call.respondText("Hello")
         }
-        server.start()
+      }
     }
+    server.start()
+  }
 
-    override fun stopServer() {
-        server.stop(500, 5000)
-    }
+  override fun stopServer() {
+    server.stop(500, 5000)
+  }
 }

@@ -34,4 +34,3 @@ private fun BenchmarkSettings.setup() {
   run<KtorNettyBenchmark>()
   run<KtorJettyBenchmark>()
 }
-
