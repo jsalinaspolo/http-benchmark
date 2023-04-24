@@ -37,7 +37,7 @@ dependencies {
   implementation("org.http4k:http4k-core:3.242.0")
   implementation("org.http4k:http4k-server-netty:3.242.0")
   implementation("org.http4k:http4k-server-jetty:3.242.0")
-  implementation("io.micronaut:micronaut-runtime:1.3.4")
+  implementation("io.micronaut:micronaut-runtime:3.9.0")
   implementation("io.micronaut:micronaut-http:1.3.4")
   implementation("io.micronaut:micronaut-http-server-netty:1.3.4")
   implementation("org.openjdk.jmh:jmh-core:1.23")
