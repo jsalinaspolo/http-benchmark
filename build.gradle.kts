@@ -2,6 +2,11 @@ plugins {
   kotlin("jvm") version "1.8.20"
   id("idea")
   id("org.jlleitschuh.gradle.ktlint") version "11.3.1"
+  application
+}
+
+application {
+  mainClass.set("org.kotlin.community.http.benchmarks.BenchmarksKt")
 }
 
 repositories {
@@ -56,5 +61,13 @@ tasks.withType<Jar> {
   manifest {
     attributes["Implementation-Title"] = project.name
     attributes["Implementation-Version"] = project.version
+    attributes["Main-Class"] = "org.kotlin.community.http.benchmarks.BenchmarksKt"
   }
+
+//  from(configurations.runtimeClasspath.get()
+//    .onEach { println("add from dependencies: ${it.name}") }
+//    .map { if (it.isDirectory) it else zipTree(it) })
+//  val sourcesMain = sourceSets.main.get()
+//  sourcesMain.allSource.forEach { println("add from sources: ${it.name}") }
+//  from(sourcesMain.output)
 }
