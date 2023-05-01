@@ -45,7 +45,7 @@ dependencies {
   implementation("org.apache.httpcomponents:httpclient:4.5.14")
   implementation("com.squareup.okhttp3:okhttp:3.6.0")
   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.3.71")
-  testImplementation("junit:junit:4.12")
+  testImplementation("junit:junit:4.13.2")
 }
 
 group = "org.kotlin.community"
