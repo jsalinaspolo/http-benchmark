@@ -34,7 +34,7 @@ dependencies {
   implementation("com.typesafe.akka:akka-http_2.11:10.0.4")
   implementation("com.typesafe.akka:akka-actor_2.11:2.4.17")
   implementation("com.typesafe.akka:akka-agent_2.11:2.4.17")
-  implementation("org.http4k:http4k-core:3.242.0")
+  implementation("org.http4k:http4k-core:4.46.0.0")
   implementation("org.http4k:http4k-server-netty:3.242.0")
   implementation("org.http4k:http4k-server-jetty:3.242.0")
   implementation("io.micronaut:micronaut-runtime:3.9.0")
