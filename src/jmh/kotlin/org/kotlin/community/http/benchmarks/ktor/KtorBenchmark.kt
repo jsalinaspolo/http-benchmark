@@ -1,13 +1,12 @@
 package org.kotlin.community.http.benchmarks.ktor
 
-import io.ktor.application.call
-import io.ktor.application.install
-import io.ktor.response.respondText
-import io.ktor.routing.Routing
-import io.ktor.routing.get
+import io.ktor.server.application.call
 import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.ApplicationEngineFactory
 import io.ktor.server.engine.embeddedServer
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
 import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
 import org.kotlin.community.http.benchmarks.benchmark
 
@@ -18,11 +17,12 @@ fun main(args: Array<String>) {
   }
 }
 
-abstract class KtorBenchmark constructor(val factory: ApplicationEngineFactory<io.ktor.server.engine.ApplicationEngine, io.ktor.server.engine.ApplicationEngine.Configuration>) : HttpBenchmarkBase() {
+abstract class KtorBenchmark constructor(val factory: ApplicationEngineFactory<io.ktor.server.engine.ApplicationEngine, io.ktor.server.engine.ApplicationEngine.Configuration>) :
+  HttpBenchmarkBase() {
   private lateinit var server: ApplicationEngine
   override fun startServer(port: Int) {
     server = embeddedServer(factory, port) {
-      install(Routing) {
+      routing {
         get("/") {
           call.respondText("Hello")
         }
