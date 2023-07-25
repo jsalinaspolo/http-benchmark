@@ -19,15 +19,12 @@ open class VertxBenchmark : HttpBenchmarkBase() {
       get("/").handler { request ->
         request.response().putHeader("content-type", "text/plain").end("Hello")
       }
-      // get().handler(StaticHandler.create("public"))
     }
 
     val f = CompletableFuture<Unit>()
-    vertx.createHttpServer().requestHandler {
-      router.accept(it)
-    }.listen(port) {
-      f.complete(Unit)
-    }
+    vertx.createHttpServer()
+      .requestHandler(router)
+      .listen(port) { f.complete(Unit) }
     f.join()
   }
 
