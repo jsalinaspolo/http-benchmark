@@ -33,7 +33,7 @@ dependencies {
   implementation("io.ktor:ktor-server-netty:2.3.2")
   implementation("io.ktor:ktor-server-jetty:2.3.2")
   implementation("io.vertx:vertx-web:4.4.4")
-  implementation("com.typesafe.akka:akka-http_2.11:10.0.4")
+  implementation("com.typesafe.akka:akka-http_2.11:10.1.15")
   implementation("com.typesafe.akka:akka-actor_2.11:2.5.32")
   implementation("com.typesafe.akka:akka-agent_2.11:2.4.17")
   implementation(platform("org.http4k:http4k-bom:5.4.1.0"))
