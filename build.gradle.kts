@@ -22,7 +22,7 @@ dependencies {
   implementation("org.slf4j:log4j-over-slf4j:2.0.7")
   implementation("org.eclipse.jetty:jetty-server:9.4.28.v20200408")
   implementation("org.eclipse.jetty:jetty-webapp:9.4.28.v20200408")
-  implementation("org.eclipse.jetty.websocket:websocket-servlet:9.4.28.v20200408")
+  implementation("org.eclipse.jetty.websocket:websocket-servlet:11.0.15")
   implementation("io.netty:netty-all:4.1.95.Final")
   implementation("io.netty:netty-buffer:4.1.91.Final")
   implementation("io.netty:netty-codec-socks:4.1.95.Final")
