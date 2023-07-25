@@ -1,6 +1,10 @@
 package org.kotlin.community.http.benchmarks
 
+import org.kotlin.community.http.benchmarks.armeria.ArmeriaBenchmark
+import org.kotlin.community.http.benchmarks.http4k.Http4kHelidonBenchmark
 import org.kotlin.community.http.benchmarks.http4k.Http4kJettyBenchmark
+import org.kotlin.community.http.benchmarks.http4k.Http4kNettyBenchmark
+import org.kotlin.community.http.benchmarks.http4k.Http4kRatpackBenchmark
 import org.kotlin.community.http.benchmarks.jetty.JettyBenchmark
 import org.kotlin.community.http.benchmarks.ktor.KtorJettyBenchmark
 import org.kotlin.community.http.benchmarks.ktor.KtorNettyBenchmark
@@ -24,13 +28,15 @@ fun main(args: Array<String>) {
 }
 
 private fun BenchmarkSettings.setup() {
-//    run<AkkaHttpBenchmark>()
   run<JettyBenchmark>()
   run<Http4kJettyBenchmark>()
-//    run<Http4kNettyBenchmark>()
+  run<Http4kNettyBenchmark>()
+  run<Http4kHelidonBenchmark>()
+  run<Http4kRatpackBenchmark>()
   run<VertxBenchmark>()
   run<NettyBenchmark>()
   run<RatpackBenchmark>()
   run<KtorNettyBenchmark>()
   run<KtorJettyBenchmark>()
+  run<ArmeriaBenchmark>()
 }
