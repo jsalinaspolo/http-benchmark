@@ -48,7 +48,7 @@ dependencies {
   implementation("org.openjdk.jmh:jmh-core:1.36")
   implementation("org.openjdk.jmh:jmh-generator-annprocess:1.36")
   implementation("org.apache.httpcomponents:httpclient:4.5.14")
-  implementation("com.squareup.okhttp3:okhttp:3.6.0")
+  implementation("com.squareup.okhttp3:okhttp:4.11.0")
 }
 
 group = "org.kotlin.community"
