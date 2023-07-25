@@ -1,6 +1,8 @@
-FROM adoptopenjdk/openjdk8:jre8u232-b09-alpine
+#FROM adoptopenjdk/openjdk8:jre8u232-b09-alpine
+FROM amazoncorretto:20.0.2-al2
 
-COPY ./target/http-benchmarks-0.1-SNAPSHOT-jar-with-dependencies.jar /opt/application/http-benchmarks.jar
+#COPY ./target/http-benchmarks-0.1-SNAPSHOT-jar-with-dependencies.jar /opt/application/http-benchmarks.jar
+COPY ./build/libs/http-benchmark-0.1-SNAPSHOT-standalone.jar /opt/application/http-benchmarks.jar
 
 WORKDIR /opt/application
 

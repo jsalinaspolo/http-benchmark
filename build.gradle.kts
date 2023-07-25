@@ -2,6 +2,8 @@ plugins {
   kotlin("jvm") version "1.8.20"
   id("idea")
   id("org.jlleitschuh.gradle.ktlint") version "11.3.1"
+  id("me.champeau.jmh") version "0.7.1"
+
   application
 }
 
@@ -44,8 +46,6 @@ dependencies {
   implementation("org.openjdk.jmh:jmh-generator-annprocess:1.23")
   implementation("org.apache.httpcomponents:httpclient:4.5.14")
   implementation("com.squareup.okhttp3:okhttp:3.6.0")
-  testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.3.71")
-  testImplementation("junit:junit:4.12")
 }
 
 group = "org.kotlin.community"
@@ -57,17 +57,30 @@ tasks.withType<JavaCompile> {
   options.encoding = "UTF-8"
 }
 
-tasks.withType<Jar> {
-  manifest {
-    attributes["Implementation-Title"] = project.name
-    attributes["Implementation-Version"] = project.version
-    attributes["Main-Class"] = "org.kotlin.community.http.benchmarks.BenchmarksKt"
-  }
+tasks {
+  val fatJar = register<Jar>("fatJar") {
+    dependsOn.addAll(
+      listOf(
+        "compileJava",
+        "compileKotlin",
+        "processResources"
+      )
+    ) // We need this for Gradle optimization to work
+    archiveClassifier.set("standalone") // Naming the jar
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+      attributes["Implementation-Title"] = project.name
+      attributes["Implementation-Version"] = project.version
+      attributes["Main-Class"] = "org.kotlin.community.http.benchmarks.BenchmarksKt"
+    }
 
-//  from(configurations.runtimeClasspath.get()
-//    .onEach { println("add from dependencies: ${it.name}") }
-//    .map { if (it.isDirectory) it else zipTree(it) })
-//  val sourcesMain = sourceSets.main.get()
-//  sourcesMain.allSource.forEach { println("add from sources: ${it.name}") }
-//  from(sourcesMain.output)
+    val sourcesMain = sourceSets.main.get()
+    val contents = configurations.runtimeClasspath.get()
+      .map { if (it.isDirectory) it else zipTree(it) } +
+        sourcesMain.output
+    from(contents)
+  }
+  build {
+    dependsOn(fatJar)
+  }
 }
