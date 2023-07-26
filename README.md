@@ -100,5 +100,14 @@ o.k.c.h.b.ninjaframework.NinjaBenchmark.hello:·gc.alloc.rate.norm              
 o.k.c.h.b.fluenthttp.FluentHttpBenchmark.hello:·gc.alloc.rate.norm               thrpt   20  3366710.592 ± 684588.788    B/op
 ```
 
-## Thanks
-Based on prior work by [rocketraman](https://github.com/rocketraman/kotlin-web-hello-world)
+```
+Benchmark                                       Mode  Cnt      Score      Error  Units
+o.k.c.h.b.http4k.Http4kRatpackBenchmark.hello  thrpt   25  15081.888 ±  666.319  ops/s
+o.k.c.h.b.ratpack.RatpackBenchmark.hello       thrpt   25  16258.413 ± 1070.480  ops/s
+o.k.c.h.b.http4k.Http4kHelidonBenchmark.hello  thrpt   25  21762.997 ±  522.998  ops/s
+o.k.c.h.b.armeria.ArmeriaBenchmark.hello       thrpt   25  22636.857 ±  368.218  ops/s
+o.k.c.h.b.vertx.VertxBenchmark.hello           thrpt   25  24607.309 ±  769.676  ops/s
+o.k.c.h.b.http4k.Http4kNettyBenchmark.hello    thrpt   25  24851.894 ±  625.266  ops/s
+o.k.c.h.b.netty.NettyBenchmark.hello           thrpt   25  25700.229 ±  994.235  ops/s
+
+```
