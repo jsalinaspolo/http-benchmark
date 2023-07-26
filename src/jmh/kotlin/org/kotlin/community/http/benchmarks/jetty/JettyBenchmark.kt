@@ -1,11 +1,5 @@
 package org.kotlin.community.http.benchmarks.jetty
 
-import jakarta.servlet.http.HttpServletRequest
-import jakarta.servlet.http.HttpServletResponse
-import org.eclipse.jetty.server.Request
-import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.server.handler.AbstractHandler
-import org.kotlin.community.http.benchmarks.HttpBenchmarkBase
 import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
@@ -14,7 +8,7 @@ fun main(args: Array<String>) {
   }
 }
 
-//open class JettyBenchmark : HttpBenchmarkBase() {
+// open class JettyBenchmark : HttpBenchmarkBase() {
 //  private lateinit var server: Server
 //  override fun startServer(port: Int) {
 //    server = Server(port)
@@ -37,4 +31,4 @@ fun main(args: Array<String>) {
 //  override fun stopServer() {
 //    server.stop()
 //  }
-//}
+// }
