@@ -25,7 +25,7 @@ import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
   benchmark(args) {
-    run<NettyBenchmark>()
+//    run<NettyBenchmark>()
   }
 }
 
@@ -38,7 +38,6 @@ open class NettyBenchmark : HttpBenchmarkBase() {
       .option(ChannelOption.SO_BACKLOG, 1024)
       .group(bossLoopGroup, workerLoopGroup)
       .channel(NioServerSocketChannel::class.java)
-      // .handler(LoggingHandler(LogLevel.INFO))
       .childHandler(HttpServerInitializer())
 
     bootstrap.bind(port)

@@ -11,7 +11,7 @@ import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
   benchmark(args) {
-    run<Http4kNettyBenchmark>()
+    run<Http4kHelidonBenchmark>()
   }
 }
 

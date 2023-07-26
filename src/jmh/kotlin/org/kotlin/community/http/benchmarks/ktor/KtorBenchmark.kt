@@ -12,8 +12,8 @@ import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
   benchmark(args) {
-    run<KtorJettyBenchmark>()
-    run<KtorNettyBenchmark>()
+//    run<KtorJettyBenchmark>()
+//    run<KtorNettyBenchmark>()
   }
 }
 
