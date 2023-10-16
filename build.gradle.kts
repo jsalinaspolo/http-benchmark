@@ -33,7 +33,7 @@ dependencies {
   implementation("io.ktor:ktor-server-netty:2.3.3")
   implementation("io.ktor:ktor-server-jetty:2.3.2")
   implementation("io.vertx:vertx-web:4.4.4")
-  implementation(platform("org.http4k:http4k-bom:5.6.4.0"))
+  implementation(platform("org.http4k:http4k-bom:5.8.4.0"))
   implementation("org.http4k:http4k-core")
   implementation("org.http4k:http4k-server-netty")
   implementation("org.http4k:http4k-server-jetty")
