@@ -32,7 +32,7 @@ dependencies {
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.2")
   implementation("io.ktor:ktor-server-netty:2.3.6")
   implementation("io.ktor:ktor-server-jetty:3.0.2")
-  implementation("io.vertx:vertx-web:4.4.4")
+  implementation("io.vertx:vertx-web:4.5.11")
   implementation(platform("org.http4k:http4k-bom:5.40.0.0"))
   implementation("org.http4k:http4k-core")
   implementation("org.http4k:http4k-server-netty")
