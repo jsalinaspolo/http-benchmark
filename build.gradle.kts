@@ -2,7 +2,7 @@ plugins {
   kotlin("jvm") version "1.9.20"
   id("idea")
   id("org.jlleitschuh.gradle.ktlint") version "11.5.1"
-  id("me.champeau.jmh") version "0.7.1"
+  id("me.champeau.jmh") version "0.7.2"
 
   application
 }
@@ -53,7 +53,7 @@ dependencies {
 group = "org.kotlin.community"
 version = "0.1-SNAPSHOT"
 description = "http-benchmark"
-java.sourceCompatibility = JavaVersion.VERSION_21
+//java.sourceCompatibility = JavaVersion.VERSION_21
 
 tasks.withType<JavaCompile> {
   options.encoding = "UTF-8"
