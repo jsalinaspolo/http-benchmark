@@ -53,7 +53,7 @@ dependencies {
 group = "org.kotlin.community"
 version = "0.1-SNAPSHOT"
 description = "http-benchmark"
-java.sourceCompatibility = JavaVersion.VERSION_20
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 tasks.withType<JavaCompile> {
   options.encoding = "UTF-8"
