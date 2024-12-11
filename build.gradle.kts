@@ -18,7 +18,7 @@ repositories {
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
   implementation("org.slf4j:slf4j-api:2.0.7")
-  implementation("ch.qos.logback:logback-classic:1.4.8")
+  implementation("ch.qos.logback:logback-classic:1.5.12")
   implementation("org.slf4j:log4j-over-slf4j:2.0.16")
   implementation("org.eclipse.jetty:jetty-server:12.0.16")
   implementation("org.eclipse.jetty:jetty-webapp:11.0.15")
