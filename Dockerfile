@@ -1,4 +1,4 @@
-FROM amazoncorretto:21.0.1-al2
+FROM amazoncorretto:21.0.5-al2
 
 COPY ./build/libs/http-benchmark-0.1-SNAPSHOT-standalone.jar /opt/application/http-benchmarks.jar
 
