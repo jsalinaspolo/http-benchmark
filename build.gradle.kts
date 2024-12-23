@@ -30,7 +30,7 @@ dependencies {
   implementation("io.netty:netty-handler-proxy:4.1.115.Final")
   implementation("io.ratpack:ratpack-core:1.9.0")
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.2")
-  implementation("io.ktor:ktor-server-netty:3.0.2")
+  implementation("io.ktor:ktor-server-netty:3.0.3")
   implementation("io.ktor:ktor-server-jetty:3.0.2")
   implementation("io.vertx:vertx-web:4.5.11")
   implementation(platform("org.http4k:http4k-bom:5.41.0.0"))
