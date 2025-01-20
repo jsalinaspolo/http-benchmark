@@ -23,7 +23,7 @@ dependencies {
   implementation("org.eclipse.jetty:jetty-server:12.0.16")
   implementation("org.eclipse.jetty:jetty-webapp:11.0.15")
   implementation("org.eclipse.jetty.websocket:websocket-servlet:11.0.24")
-  implementation("io.netty:netty-all:4.1.116.Final")
+  implementation("io.netty:netty-all:4.1.117.Final")
   implementation("io.netty:netty-buffer:4.1.116.Final")
   implementation("io.netty:netty-codec-socks:4.1.116.Final")
   implementation("io.netty:netty-resolver-dns:4.1.115.Final")
