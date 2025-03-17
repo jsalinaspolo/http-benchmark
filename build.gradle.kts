@@ -25,7 +25,7 @@ dependencies {
   implementation("org.eclipse.jetty.websocket:websocket-servlet:11.0.24")
   implementation("io.netty:netty-all:4.1.116.Final")
   implementation("io.netty:netty-buffer:4.1.119.Final")
-  implementation("io.netty:netty-codec-socks:4.1.116.Final")
+  implementation("io.netty:netty-codec-socks:4.1.119.Final")
   implementation("io.netty:netty-resolver-dns:4.1.115.Final")
   implementation("io.netty:netty-handler-proxy:4.1.119.Final")
   implementation("io.ratpack:ratpack-core:1.9.0")
