@@ -33,19 +33,23 @@ Add the following to the command line arguments to switch modes:
 * `daemon` – to run just setup for a benchmark and wait for a key, so you can point your browser to `localhost:5678`
   and see what's going on
 
-# Contributing
+## How to run
 
-I'm not very interested in various hacks to speed up your favorite server.
-Servers are setup with minimum configuration on purpose.
- 
-I'm interested in 
-* other JVM http servers 
-  * Ratpack
-  * com.sun.net.httpserver (?)
-* other JVM http clients 
-* comments on better benchmarking techniques (please, be specific)
+From gradle
+```
+$ ./gradlew jmh
+```
+
+From docker
+
+```
+ ./gradlew jmhJar    
+ docker build -t server-benchmark . 
+ docker run server-benchmark
+```
 
 # Results
+
 JMH is run with 32 threads sending requests against server using OkHttp. 
 There are 5 warm-up and 5 measurement iterations.  Warm-up and measurement 
 iterations are running for 10 seconds each so that server can have a chance 

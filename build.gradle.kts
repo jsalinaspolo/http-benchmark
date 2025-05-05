@@ -8,7 +8,7 @@ plugins {
 }
 
 application {
-  mainClass.set("org.kotlin.community.http.benchmarks.BenchmarksKt")
+  mainClass = "org.kotlin.community.http.benchmarks.BenchmarksKt"
 }
 
 repositories {
@@ -31,7 +31,7 @@ dependencies {
   implementation("io.ratpack:ratpack-core:1.9.0")
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.3")
   implementation("io.ktor:ktor-server-netty:3.1.2")
-  implementation("io.ktor:ktor-server-jetty:3.1.2")
+  implementation("io.ktor:ktor-server-jetty-jakarta:3.1.2")
   implementation("io.vertx:vertx-web:4.5.14")
   implementation(platform("org.http4k:http4k-bom:6.7.0.0"))
   implementation("org.http4k:http4k-core")
@@ -53,8 +53,10 @@ dependencies {
 group = "org.kotlin.community"
 version = "0.1-SNAPSHOT"
 description = "http-benchmark"
-java.sourceCompatibility = JavaVersion.VERSION_21
-java.targetCompatibility = JavaVersion.VERSION_21
+
+kotlin {
+  jvmToolchain(21)
+}
 
 tasks.withType<JavaCompile> {
   options.encoding = "UTF-8"

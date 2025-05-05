@@ -3,6 +3,7 @@ package org.kotlin.community.http.benchmarks.ktor
 import io.ktor.server.application.call
 import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.ApplicationEngineFactory
+import io.ktor.server.engine.EmbeddedServer
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
@@ -12,14 +13,14 @@ import org.kotlin.community.http.benchmarks.benchmark
 
 fun main(args: Array<String>) {
   benchmark(args) {
-//    run<KtorJettyBenchmark>()
-//    run<KtorNettyBenchmark>()
+    run<KtorJettyBenchmark>()
+    run<KtorNettyBenchmark>()
   }
 }
 
-abstract class KtorBenchmark constructor(val factory: ApplicationEngineFactory<io.ktor.server.engine.ApplicationEngine, io.ktor.server.engine.ApplicationEngine.Configuration>) :
+abstract class KtorBenchmark constructor(val factory: ApplicationEngineFactory<ApplicationEngine, ApplicationEngine.Configuration>) :
   HttpBenchmarkBase() {
-  private lateinit var server: ApplicationEngine
+  private lateinit var server: EmbeddedServer<ApplicationEngine, ApplicationEngine.Configuration>
   override fun startServer(port: Int) {
     server = embeddedServer(factory, port) {
       routing {
