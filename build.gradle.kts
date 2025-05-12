@@ -31,7 +31,7 @@ dependencies {
   implementation("io.ratpack:ratpack-core:1.9.0")
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.3")
   implementation("io.ktor:ktor-server-netty:3.1.2")
-  implementation("io.ktor:ktor-server-jetty-jakarta:3.1.2")
+  implementation("io.ktor:ktor-server-jetty-jakarta:3.1.3")
   implementation("io.vertx:vertx-web:4.5.14")
   implementation(platform("org.http4k:http4k-bom:6.7.0.0"))
   implementation("org.http4k:http4k-core")
