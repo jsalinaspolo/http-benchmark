@@ -26,7 +26,7 @@ dependencies {
   implementation("io.netty:netty-all:4.2.0.Final")
   implementation("io.netty:netty-buffer:4.2.0.Final")
   implementation("io.netty:netty-codec-socks:4.2.0.Final")
-  implementation("io.netty:netty-resolver-dns:4.2.0.Final")
+  implementation("io.netty:netty-resolver-dns:4.2.1.Final")
   implementation("io.netty:netty-handler-proxy:4.2.0.Final")
   implementation("io.ratpack:ratpack-core:1.9.0")
   implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.3")
