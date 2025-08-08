@@ -46,7 +46,7 @@ dependencies {
   implementation("org.openjdk.jmh:jmh-generator-annprocess:1.37")
   implementation("org.apache.httpcomponents:httpclient:4.5.14")
   implementation("com.squareup.okhttp3:okhttp:5.1.0")
-  implementation(platform("com.linecorp.armeria:armeria-bom:1.32.5"))
+  implementation(platform("com.linecorp.armeria:armeria-bom:1.33.0"))
   implementation("com.linecorp.armeria:armeria-kotlin")
 }
 
