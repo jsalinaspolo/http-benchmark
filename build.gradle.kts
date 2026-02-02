@@ -20,7 +20,7 @@ dependencies {
   implementation("org.slf4j:slf4j-api:2.0.17")
   implementation("ch.qos.logback:logback-classic:1.5.23")
   implementation("org.slf4j:log4j-over-slf4j:2.0.17")
-  implementation("org.eclipse.jetty:jetty-server:12.1.5")
+  implementation("org.eclipse.jetty:jetty-server:12.1.6")
   implementation("org.eclipse.jetty:jetty-webapp:11.0.25")
   implementation("org.eclipse.jetty.websocket:websocket-servlet:11.0.26")
   implementation("io.netty:netty-all:4.2.9.Final")
