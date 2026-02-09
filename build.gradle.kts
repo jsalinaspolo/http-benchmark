@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlin:kotlin-stdlib:2.3.0")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib:2.3.10")
   implementation("org.slf4j:slf4j-api:2.0.17")
   implementation("ch.qos.logback:logback-classic:1.5.27")
   implementation("org.slf4j:log4j-over-slf4j:2.0.17")
