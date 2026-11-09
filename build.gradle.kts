@@ -40,7 +40,7 @@ dependencies {
   implementation("org.http4k:http4k-server-helidon")
   implementation("org.http4k:http4k-server-ratpack")
   implementation("io.micronaut:micronaut-runtime:4.10.23")
-  implementation("io.micronaut:micronaut-http:4.10.23")
+  implementation("io.micronaut:micronaut-http:5.2.22")
   implementation("io.micronaut:micronaut-http-server-netty:4.10.23")
   implementation("org.openjdk.jmh:jmh-core:1.37")
   implementation("org.openjdk.jmh:jmh-generator-annprocess:1.37")
